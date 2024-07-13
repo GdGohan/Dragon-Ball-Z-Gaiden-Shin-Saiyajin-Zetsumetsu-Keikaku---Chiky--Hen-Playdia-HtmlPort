@@ -41,15 +41,15 @@
     </style>
 </head>
 <body>
-    <video id="videoPlayer" autoplay="autoplay" controls>
-        <source src="video14left.mp4" type="video/mp4">
+    <video id="VideoPlayer" autoplay="autoplay" controls>
+        <source src="Video14left.mp4" type="Video/mp4">
         Seu navegador não suporta a tag de vídeo.
     </video>
-    <div class="button-container">
-        <button onclick="LoadPage('Ivideo16.html')">Left</button>
+    <dIV class="button-container">
+        <button onclick="LoadPage('IVideo16.html')">Left</button>
 		<button onclick="playVideo('video15up.mp4')">Up</button>
 		<button onclick="playVideo('video15right.mp4')">Right</button>
-    </div>
+    </dIV>
 
     <script>
         const videoPlayer = document.getElementById('videoPlayer');
@@ -57,7 +57,7 @@
 
         // Adiciona um evento para sair da tela cheia quando o vídeo terminar
         videoPlayer.addEventListener('ended', function() {
-		if (!videoPlayer.src.includes("video15.mp4")) {
+		if (!videoPlayer.src.includes("Video15.mp4")) {
 			playVideo('video15.mp4')
 			}
 			else {
