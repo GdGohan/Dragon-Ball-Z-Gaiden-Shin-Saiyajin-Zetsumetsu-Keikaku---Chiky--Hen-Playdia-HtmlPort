@@ -47,18 +47,18 @@
     </video>
     <dIV class="button-container">
         <button onclick="LoadPage('IVideo16.html')">Left</button>
-		<button onclick="playVideo('video15up.mp4')">Up</button>
-		<button onclick="playVideo('video15right.mp4')">Right</button>
+		<button onclick="playVideo('Video15up.mp4')">Up</button>
+		<button onclick="playVideo('Video15right.mp4')">Right</button>
     </dIV>
 
     <script>
-        const videoPlayer = document.getElementById('videoPlayer');
-		const videoPlayer2 = document.getElementById('videoPlayer');
+        const videoPlayer = document.getElementById('VideoPlayer');
+		const videoPlayer2 = document.getElementById('VideoPlayer');
 
         // Adiciona um evento para sair da tela cheia quando o vídeo terminar
         videoPlayer.addEventListener('ended', function() {
 		if (!videoPlayer.src.includes("Video15.mp4")) {
-			playVideo('video15.mp4')
+			playVideo('Video15.mp4')
 			}
 			else {
 			exitFullscreen();

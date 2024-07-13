@@ -50,13 +50,13 @@
     </dIV>
 
     <script>
-        const videoPlayer = document.getElementById('videoPlayer');
-		const videoPlayer2 = document.getElementById('videoPlayer');
+        const videoPlayer = document.getElementById('VideoPlayer');
+		const videoPlayer2 = document.getElementById('VideoPlayer');
 
         // Adiciona um evento para sair da tela cheia quando o vídeo terminar
         videoPlayer.addEventListener('ended', function() {
 		if (!videoPlayer.src.includes("Video16.mp4")) {
-			playVideo('video16.mp4')
+			playVideo('Video16.mp4')
 			}
 			else {
 			exitFullscreen();
