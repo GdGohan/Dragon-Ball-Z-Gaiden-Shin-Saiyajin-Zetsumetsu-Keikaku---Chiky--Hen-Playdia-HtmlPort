@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z Gaiden: Shin Saiyajin Zetsumetsu Keikaku - Chikyū-Hen</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000;
+            margin: 0;
+        }
+        video {
+            width: 85%;
+            height: 85%;
+            object-fit: fill;
+        }
+        video::-webkit-media-controls-fullscreen-button {
+            display: none;
+        }
+        video::-webkit-media-controls-enclosure {
+            overflow: hidden;
+        }
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 640px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video id="videoPlayer" autoplay="autoplay" controls>
+        <source src="video4.mp4" type="video/mp4">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+    <div class="button-container">
+        <button onclick="playVideo('video4left.mp4')">Left</button>
+        <button onclick="LoadPage('Ivideo5.html')">Up</button>
+        <button onclick="playVideo('video4right.mp4')">Right</button>
+    </div>
+
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        // Adiciona um evento para sair da tela cheia quando o vídeo terminar
+        videoPlayer.addEventListener('ended', function() {
+            exitFullscreen();
+        });
+		videoPlayer.addEventListener('play', function() {
+            openFullscreen(videoPlayer);
+        });
+
+        // Função para reproduzir o vídeo e colocá-lo em tela cheia
+        function playVideo(videoSrc) {
+            videoPlayer.src = videoSrc;
+            videoPlayer.play();
+            openFullscreen(videoPlayer);
+        }
+
+        // Função para carregar outra página ao clicar em um botão
+        function LoadPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+
+        // Função para abrir o vídeo em tela cheia
+        function openFullscreen(elem) {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        }
+
+        // Função para sair da tela cheia
+        function exitFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) { // Firefox
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { // IE/Edge
+                document.msExitFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
